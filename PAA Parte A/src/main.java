@@ -7,12 +7,14 @@ public class main {
         for (int j = 0; j < 10; j++){
             for (int i = 0; i < 10; i++) {
                 System.out.println("Vetor " + i + " tamanho "+ tamanho[i] +  ": ");
-                bubbleSort.BBSortClassico(vetores.criarVetor(tamanho[i]));
-                insertionSort.insertionSort(vetores.criarVetor(tamanho[i]));
+                int vetor[] = vetores.criarVetor(tamanho[i]);
+                int vetorClonado[] = vetores.clonaVetor(vetor);
+                bubbleSort.BBSortClassico(vetor);
+                insertionSort.insertionSort(vetorClonado);
                 System.out.println("\n");
             }
         }
-        System.out.println(tamanho[1]);
+        System.out.println(tamanho[5]);
     }
 }
 

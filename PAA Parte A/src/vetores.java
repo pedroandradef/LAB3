@@ -14,12 +14,6 @@ public class vetores {
     }
 
 
-    public static void lerVetor(int vetor[]) {
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.println(vetor[i]);
-        }
-    }
-
     public static int[] tamanhoVetor() {
         int x = 0;
         Random rdm = new Random();
@@ -29,5 +23,10 @@ public class vetores {
             tamanho[i] = x;
         }
         return tamanho;
+    }
+    public static int[] clonaVetor(int[] vetor){
+
+        int [] vetorClonado = vetor.clone();
+        return vetorClonado;
     }
 }
