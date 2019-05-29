@@ -1,0 +1,24 @@
+Inicio
+
+    Cria Array num Posit
+    Cria Array num 0
+    Cria Array num Neg
+
+    for vetor[]
+        se (vet[i] == 0)
+            array0 add i
+        fim se
+
+        se (vet[i] < 0)
+            arrayNeg add i
+        fim se
+
+        se(vet[i] > 0)
+            arrayPosit add i
+        fim se
+    fim for
+
+    arrayNeg + array0 + arrayPosit
+
+    for vetor[]
+        vetor[i] = arrayNeg;
