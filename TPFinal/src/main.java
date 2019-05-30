@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import exercicio1.ex1;
 import exercicio3.ex3;
@@ -32,8 +33,9 @@ public class main {
         weight.add(20);
         weight.add(30);
 
-
-        System.out.println(ex3.greedy(value, weight,50,0));
+        HashMap<Integer,Integer> memo = new HashMap<>();
+        System.out.println(ex3.dinamic(value,weight,100,2,0,0,0,memo));
+        //System.out.println(ex3.greedy(value, weight,50,0));
         //Fim Teste EX3
 
 
