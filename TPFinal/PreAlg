@@ -1,3 +1,4 @@
+Dividir e conquistar
 ex1
 Inicio
 
@@ -25,6 +26,19 @@ Inicio
         vetor[i] = arrayNeg;
 fim
 -------------------------------------------------------------//------------------------------------------------------------------------------------
-
-ex2
+Greedy/Guloso
+ex3
 Inicio
+
+    se peso !0{
+    While ( P > w[maiorValor]){
+        P =- w[maiorValor]
+        valor =+ v[maiorValor]
+    }
+
+     maiorValor--;
+     guloso();
+    }
+
+
+

@@ -1,7 +1,7 @@
 package exercicio2;
 
 public class ia {
-    public static void play(String tabela[][]){
+  /*  public static void play(String tabela[][]){
         int x = 0;
         int y = 0;
 
@@ -12,5 +12,5 @@ public class ia {
             }
 
         }
-    }
+    }*/
 }
