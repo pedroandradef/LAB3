@@ -34,14 +34,17 @@ public class ex3 {
 
         if(i == -1 || capacity == 0) //se o array acabar ou a capacidade acabar retorna 0 pois nao pode colocar mais nada na mochila
             return 0;
+
         if(weight.get(i) > capacity && capacity > 0) //se o peso do objeto for maior que o que cabe na mochila, chama novamente a funcao com o proximo item
             return dinamic(value, weight, capacity, i-1, max1, max2,resultado, memo);
+
         else {
             max1 = value.get(i) + dinamic(value,weight,capacity-weight.get(i),i,max1,max2, resultado, memo); //chama a funcao recursiva decidindo colocaro item ate nao caber mais
             max2 = dinamic(value, weight, capacity, i-1, max1, max2, resultado, memo); //chama a funcao decidindo nao colocar o item na mochila
             resultado = Math.max(max1,max2); //decide qual e mais valioso
             memo.put(capacity,value.get(i)); //adiciona no Hash o mais valioso de acordo com peso para caso precise novamente saber qual vale mais com um determinado peso
         }
+
         return resultado;
     }
 }
