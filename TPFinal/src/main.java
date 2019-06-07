@@ -23,22 +23,15 @@ public class main {
         //FIM Teste EX1
 
         //Teste EX3
-       /* ArrayList<Integer> value = new ArrayList<Integer>();
-        ArrayList<Integer> weight = new ArrayList<Integer>();
+        int memo[][] = ex3.criaVetorDin();
+        int value[] = new int[]{10, 20, 30};
+        int weight[] = new int[]{2, 2, 4};
 
 
-        value.add(10);
-        value.add(20);
-        value.add(30);
+        System.out.println(ex3.dinamic(2,7,memo,value,weight));
 
-        weight.add(5);
-        weight.add(15);
-        weight.add(10);
-
-        HashMap<Integer,Integer> memo = new HashMap<>();
-        System.out.println(ex3.dinamic(value,weight,100,2,0,0,0,memo));
         //System.out.println(ex3.greedy(value, weight,50,0));
-        //Fim Teste EX3*/
+        //Fim Teste EX3
 
         //Teste EX7
        /* ArrayList<String> activity = new ArrayList<>();
@@ -56,8 +49,8 @@ public class main {
         System.out.println(ex7.greedyTime(activity, duration,10);
         */
 
-        HashMap<Integer,Integer> memo = new HashMap<>();
-       System.out.println(ex8.fibonacci1(46, memo));
+//        HashMap<Integer,Integer> memo = new HashMap<>();
+//       System.out.println(ex8.fibonacci1(46, memo));
     }
 
 }
