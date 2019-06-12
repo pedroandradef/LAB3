@@ -9,22 +9,23 @@ public class ex4 {
         ArrayList<Integer> aux = new ArrayList<Integer>();
         aux = (ArrayList<Integer>) array.clone();
 
+        ArrayList<Integer> resp = new ArrayList<>();
+
         Collections.sort(aux);
 
-        System.out.println(aux.toString());
+
 
         for (int i = 0; i < remover; i++)
             aux.remove(0);
 
-        System.out.println(aux.toString());
 
         for (int i = 0; i < aux.size(); i++) {
-            if (!aux.contains(array.get(i)))
-                array.remove(i);
+            if (aux.contains(array.get(i)))
+                resp.add(array.get(i));
         }
 
 
-        System.out.println(array.toString());
+        System.out.println("Total a ser levado: " + resp.toString());
 
     }
 }

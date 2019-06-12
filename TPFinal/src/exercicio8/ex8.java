@@ -29,7 +29,7 @@ public class ex8 {
         if(troco < moedas[i])
             return troco(moedas,troco, memo, i-1);
 
-        if(memo[i][moedas[i]] < 999)
+        if( memo[i][troco] < 999)
             return memo[i][troco];
 
         int min1 = troco(moedas, troco - moedas[i], memo, i) + 1 ;

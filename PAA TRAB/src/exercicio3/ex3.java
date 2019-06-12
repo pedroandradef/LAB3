@@ -6,6 +6,10 @@ import java.util.HashMap;
 public class ex3 {
 
     public static int greedy(ArrayList<Integer> value,ArrayList<Integer> weight, int capacity, int maxMoney){
+        Runtime rt = Runtime.getRuntime();
+        long totalM = 0;
+
+        totalM = rt.totalMemory();
 
         int maxVal = value.size() -1; //busca o item de maior valor ja que e proporcional ao tamanho do array
 
@@ -23,41 +27,41 @@ public class ex3 {
 
             return greedy(value, weight,capacity, maxMoney); //recursiva o metodo chamando com o novo maior valor.
         }
+
+        System.out.println((rt.totalMemory()));
         return maxMoney;
 
 
     }
 
     public static int [][] criaVetorDin(){
-        int memo[][] = new int[100][100];
-        for(int i = 0; i < 100; i++){
-            for(int j = 0; j < 100; j++)
+        int memo[][] = new int[50][50];
+        for(int i = 0; i < 50; i++){
+            for(int j = 0; j < 50; j++)
                 memo[i][j] = -1;
         }
         return memo;
     }
 
 
-   public static int dinamic(int i, int cap, int value[], int weight[]){
+   public static int dinamic(int i, int cap, int memo[][], int value[], int weight[]){
 
 
-       int memo[][] = new int[i+1][cap+1];
+        if(i == 0 || cap == 0)
+            return 0;
 
-       for (int j = 0; j <= i; j++)
-       {
-           for (int k = 0; k <= cap; k++)
-           {
-               if (j == 0 || k == 0)
-                   memo[j][k] = 0;
+        if(cap < weight[i])
+            dinamic(i-1,cap,memo,value,weight);
 
-               else if (weight[i-1] <= k)
-                   memo[j][k] = Math.max(value[i-1] + memo[i-1][k-weight[i-1]],  memo[i-1][k]);
+        if(memo[i][cap] > -1)
+            return memo[i][cap];
 
-               else
-                   memo[j][k] = memo[j-1][k];
-           }
-       }
 
-       return memo[i][cap];
+        int max1 =  value[i] + dinamic(i-1, cap - weight[i], memo, value, weight ) ;
+        int max2 = dinamic(i-1, cap, memo, value, weight);
+        memo[i][cap] = Math.max(max1, max2);
+
+        return memo[i][cap];
+
    }
 }
